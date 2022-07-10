@@ -1,0 +1,131 @@
+.header{
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    border-top: 0.5px solid #e3e3e3;
+    border-bottom: 0.5px solid #e3e3e3;
+}
+.header .container{
+    height: 100%;
+}
+.header .container .row {
+    height: 100%;
+}
+.header .container .row .col-4 {
+    height: 100%;
+}
+.header .container .row .left-content {
+    height: 100%;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.header .container .row .left-content .item1{
+    width: 48%;
+    height: 100%;
+}
+.header .container .row .left-content .item1 a img {
+    width: 100%;
+    height: 70%;
+    margin: 8px auto;
+}
+.header .container .row .left-content .item2{
+    width: 48%;
+    height: 100%;
+}
+.header .container .row .left-content .item2 nav{
+    width: 90%;
+    height: 60%;
+    background-color: #80ba30;
+    border-radius: 5px;
+    margin: 10px auto;
+}
+.header .container .row .left-content .item2 nav{
+    width: 80%;
+    height: 60%;
+    background-color: #80ba30;
+    border-radius: 5px;
+    margin: 10px auto;
+    padding: 0 10px;
+}
+.header .container .row .left-content .item2 nav .icon{
+   font-size: larger;
+}
+.header .container .row .left-content .item2 nav .header-text{
+   margin-left: 4px;
+   font-size: 14px;
+ }
+ .header .container .row .center-content {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    padding: 0 50px;
+    box-sizing:  border-box;
+}
+.header .container .row .center-content .search{
+    height: 35px;
+    width: 350px;
+    border: 0.5px solid #d6d7db;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+.header .container .row .center-content .search .icon-search{
+    font-weight: 600;
+    padding: 0 6px;
+}
+.header .container .row .center-content .search input{
+    outline: none;
+    border: none;
+    width: 300px;
+    height: 100%;
+}
+.header .container .row .right-content{
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+.header .container .row .right-content .signin {
+    width: 20%;
+    height: 100%;
+    font-weight: 700;
+    color: #8a96a6;
+   margin-top: 14px;
+   
+}
+.header .container .row .right-content .signup {
+    width: 35%;
+    height: 100%;
+    margin-top: 8px;
+}
+.header .container .row .right-content .signup button{
+    border: 0.5px solid #b9dda6;
+    background-color: white;
+    color: 
+    #bfc95a;
+    padding: 8px 10px;
+    font-weight: 400;
+    border-radius: 5px;
+}
+.header .container .row .right-content .signup button:hover{
+    background-color: hsl(87, 54%, 39%);
+    color: white;
+}
+.header .container .row .right-content .button-write button{
+    border: 0.5px solid #b9dda6;
+    background-color: 
+    #ff5a5f;
+    color: 
+    white;
+    padding: 8px 10px;
+    font-weight: 400;
+    border-radius: 5px;
+}
+.header .container .row .right-content .button-write button:hover{
+    background-color: #ea7276;
+    color: white;
+}
+.header .container .row .right-content .button-write {
+    width: 40%;
+    height: 100%;
+    margin-top: 8px;
+}
