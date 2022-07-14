@@ -129,3 +129,129 @@
     height: 100%;
     margin-top: 8px;
 }
+.main{
+    width: 100%;
+    height: auto;
+    background-color: #fafafa;
+}
+.main .container{
+    margin: 30px auto;
+    border: 1px solid #dbdbdd;
+    box-sizing: border-box;
+    padding: 20px 35px;
+}
+.main .container .breadcrumb p a {
+    color: black;
+    text-decoration: none;
+}
+.main .container .breadcrumb p a:hover {
+    color: #7eb92f;
+}
+.main .container .table {
+
+    margin-top: -10px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.main .container .table h1 a{
+    color: #242c42;
+    font-family: "proxima-soft","Varela Round",sans-serif !important;
+    text-decoration: none;
+    font-size: 28px;
+    font-weight: 500;
+    word-break:break-word;
+}
+.main .container .table span {
+    border: none;
+}
+.main .container .table span button{
+    margin-right: 30px;
+    background-color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: #7eb92f;
+    border: 0.3px solid #7eb92f;
+}
+.main .container .table span button:hover{
+    background-color: #7eb92f;
+    color: white;
+}
+.main .container .row {
+    height: 300px;
+}
+.main .container .row .col-4{
+    height: 100%;  
+}
+.main .container .row .col-4 .product-image{
+    height: 240px;  
+    position: relative;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid rgba(36,44,66,.2);
+}
+.main .container .row .col-4 .product-image a {
+    position: absolute;
+    top: 100px;
+    right: 0;
+    left: 0;
+}
+.main .container .row .col-4 .product-info{
+    margin-top: 20px;
+    height: 40px;  
+}
+.main .container .row .col-4 .product-info button{
+    width: 100%;
+    height: 100%;
+    background-color: #ff5a5f;  
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+.main .container .row .col-4 .product-info button span{
+    margin-right: 10px;
+    
+}
+.main .container .row .col-8 {
+    display: block;
+
+}
+.main .container .row .col-8 .product-detail .hightlight-head{
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    background-color: #f6f8f9;
+    line-height: 45px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-radius: 5px;
+    border: 0.5px solid rgba(36,44,66,.2);
+}
+.main .container .row .col-8 .product-detail .hightlight-head h2{
+    margin-top: 15px;
+    font-size: 17px;
+    font-weight: 500;
+    font-family: "proxima-soft","Varela Round",sans-serif !important;
+}
+.main .container .row .col-8 .product-detail .hightlight-head .pull-left{
+    display: block;
+}
+.main .container .row .col-8 .product-detail .hightlight-head .pull-right{
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+.main .container .row .col-8 .product-detail .hightlight-head .pull-right span{
+    margin-right: 20px;
+    margin-top: 5px;
+}
+.main .container .row .col-8 .product-detail .hightlight-head .pull-right .selectbox-container button{
+    background-color: white;
+    border: 0.5px solid rgba(36,44,66,.2);
+    border-radius: 5px;
+    height: 40px;
+    margin-top: 8px;
+    text-align: center;
+}
