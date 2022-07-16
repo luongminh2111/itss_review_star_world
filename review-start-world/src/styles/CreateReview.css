@@ -1,0 +1,23 @@
+#writereviewpanel{
+    font-family: Lato,sans-serif;
+    font-weight: 400;
+    word-spacing: 1px;
+    line-height: 1.2;
+    margin-top: 20px;
+}
+#writereviewpanel .container{
+    overflow: visible;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    width: 100%;
+    float: none!important;
+    overflow: hidden;
+}
+#writereviewpanel .box-module{
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    margin: 20px auto;
+    padding: 20px 15px;
+    border-radius: 2px;
+}

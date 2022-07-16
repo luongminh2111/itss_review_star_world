@@ -1,57 +1,15 @@
 import React, { useState } from "react";
 import "../styles/Home.css";
-import logo from "../assets/image1.png";
-import { SiCounterstrike } from "react-icons/si";
-import { VscSearch } from "react-icons/vsc";
 import { FaPencilAlt } from "react-icons/fa";
-import Content from "./Content";
-
+import Card from "./Card";
+import Header from "./Header";
+import Footer from "./Footer";
+import { useHistory } from "react-router-dom";
 function Home(props) {
+  const history = useHistory();
   return (
     <>
-      <div className="header">
-        <div className="container">
-          <div className="row">
-            <div className="col-4  left-content">
-              <div className="item1">
-                <a>
-                  <img className="logo" src={logo}></img>
-                </a>
-              </div>
-              <div className="item2">
-                <nav>
-                  <span className="icon">
-                    <SiCounterstrike color="white" />
-                  </span>
-                  <span className="text-white header-text">
-                    Browse Categories
-                  </span>
-                </nav>
-              </div>
-            </div>
-            <div className="col-4  center-content">
-              <div className="search">
-                <span className="icon-search">
-                  <VscSearch />
-                </span>
-                <input
-                  className="input"
-                  placeholder="Search for products, brands, services etc"
-                ></input>
-              </div>
-            </div>
-            <div className="col-4  right-content">
-              <div className="signin ">Login</div>
-              <div className="signup">
-                <button>Free Sign Up</button>
-              </div>
-              <div className="button-write">
-                <button>Write a Review</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Header />
       <div className="main">
         <div className="container">
           <div className="breadcrumb">
@@ -82,7 +40,11 @@ function Home(props) {
                 </a>
               </div>
               <div className="product-info">
-                <button>
+                <button
+                  onClick={() => {
+                    history.push("/review/writereview");
+                  }}
+                >
                   <span>
                     <FaPencilAlt />
                   </span>
@@ -107,19 +69,23 @@ function Home(props) {
             </div>
           </div>
           <hr style={{ marginTop: "20px" }} />
-          <h5 className=""> Review</h5>
+          <h5 className="" style={{ color: "#6faa41" }}>
+            {" "}
+            Reviews
+          </h5>
           <hr />
           <div className="customer-body">
             <div className="wrapper">
-              <div className="pull-left">
+              <div className="left-panel">
                 <h2> Star World Reviews</h2>
+                <Card />
               </div>
-              <div className="pull-right"></div>
+              <div className="sidebar"></div>
             </div>
           </div>
         </div>
       </div>
-      <div className="footer"></div>
+      <Footer />
     </>
   );
 }
