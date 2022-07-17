@@ -14,8 +14,9 @@ function Home(props) {
         <div className="container">
           <div className="breadcrumb">
             <p>
-              <a href="">Home</a> > <a href="">Movies Music and Sitcom</a> >
-              <a href="">Movies Music and Sitcom</a> > Star World
+              <a href="">Home</a>  
+              <a href="">Movies Music and Sitcom</a> 
+              <a href="">Movies Music and Sitcom</a>
             </p>
           </div>
           <div className="table">

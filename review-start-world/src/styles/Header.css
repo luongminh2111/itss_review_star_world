@@ -80,18 +80,10 @@
 }
 .header .container .row .right-content{
     display: inline-flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     box-sizing: border-box;
 }
-.header .container .row .right-content .signin {
-    width: 20%;
-    height: 100%;
-    font-weight: 700;
-    color: #8a96a6;
-   margin-top: 14px;
-   
-}
+
 .header .container .row .right-content .signup {
     width: 35%;
     height: 100%;
