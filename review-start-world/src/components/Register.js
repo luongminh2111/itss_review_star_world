@@ -1,10 +1,12 @@
 import React, { Component } from "react";
-import register from "../lib/firebase";
 
 export default class Register extends Component {
   render() {
     return (
-      <div className="auth-wapper">
+      <div
+        className="auth-wapper"
+        style={{ position: "absolute", top: "100px", left: "650px" }}
+      >
         <div className="auth-inner">
           <form>
             <h3>Register</h3>
@@ -15,7 +17,6 @@ export default class Register extends Component {
                 type="text"
                 className="form-control"
                 placeholder="First Name"
-                id="firstname"
               ></input>
             </div>
 
@@ -25,16 +26,6 @@ export default class Register extends Component {
                 type="text"
                 className="form-control"
                 placeholder="Last Name"
-                id="lastname"
-              ></input>
-            </div>
-            <div className="form-group">
-              <label>Address</label>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Address"
-                id="address"
               ></input>
             </div>
 
@@ -44,7 +35,6 @@ export default class Register extends Component {
                 type="email"
                 className="form-control"
                 placeholder="Email"
-                id="email"
               ></input>
             </div>
 
@@ -54,7 +44,6 @@ export default class Register extends Component {
                 type="password"
                 className="form-control"
                 placeholder="Password"
-                id="password"
               ></input>
             </div>
 
@@ -67,7 +56,7 @@ export default class Register extends Component {
               ></input>
             </div>
 
-            <button onClick={register} className="btn btn-primary btn-block">Sign Up</button>
+            <button className="btn btn-primary btn-block">Sign Up</button>
           </form>
         </div>
       </div>
