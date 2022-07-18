@@ -3,7 +3,10 @@ import React, { Component } from "react";
 export default class Register extends Component {
   render() {
     return (
-      <div className="auth-wapper">
+      <div
+        className="auth-wapper"
+        style={{ position: "absolute", top: "100px", left: "650px" }}
+      >
         <div className="auth-inner">
           <form>
             <h3>Register</h3>

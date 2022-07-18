@@ -13,12 +13,16 @@ function Header(props) {
         <div className="row">
           <div className="col-4  left-content">
             <div className="item1">
-              <a>
+              <a
+                onClick={() => {
+                  history.push("/");
+                }}
+              >
                 <img className="logo" src={logo}></img>
               </a>
             </div>
             <div className="item2">
-              <nav>
+              <nav style={{ width: "100%" }}>
                 <span className="icon">
                   <SiCounterstrike color="white" />
                 </span>

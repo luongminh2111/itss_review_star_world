@@ -7,7 +7,7 @@ import { AiOutlineComment } from "react-icons/ai";
 import { AiFillLike } from "react-icons/ai";
 import { FaReplyAll } from "react-icons/fa";
 import "../styles/Card.css";
-function Card(props) {
+function Card({ cardItem }) {
   return (
     <>
       <div className=" review-article">
