@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/Footer.css";
 function Footer(props) {
   return (
-    <div className="footer">
+    <div className="footer" style={{ marginTop: "30px" }}>
       <div className="content-center">
         <div className="primary-footer-wrapper row">
           <div className="primary-footer-holder col-12">
@@ -30,26 +30,15 @@ function Footer(props) {
               </div>
             </div>
           </div>
-          <div className="col-4">
-            <div className="rod-wrapper">
-              <div className="rod-footer-title">Review of the Day</div>
-              <div className="rod-footer-content">
-                <div className="rod-footer-img"></div>
-                <div className="rod-footer-content">
-                  <div className="footer-review-title">
-                    This company is a cheat
-                  </div>
-                  <div className="footer-prod-title">On: Homelane.com</div>
-                  <div className="footer-user-name">
-                    <span>By</span>
-                    <span>sanjaykrdebskd</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+
+          <div className="col-12" style={{ marginTop: "20px" }}>
+            <p>
+              Author: グループ6　
+              <br></br>
+              <hr />
+              ルオン・ヴァン・ミン
+            </p>
           </div>
-          <div className="col-4"></div>
-          <div className="col-4"></div>
         </div>
       </div>
     </div>

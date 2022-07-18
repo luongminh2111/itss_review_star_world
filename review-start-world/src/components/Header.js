@@ -4,7 +4,7 @@ import logo from "../assets/image1.png";
 import { SiCounterstrike } from "react-icons/si";
 import { VscSearch } from "react-icons/vsc";
 import { useHistory } from "react-router-dom";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 function Header(props) {
   const history = useHistory();
   return (
@@ -40,9 +40,17 @@ function Header(props) {
             </div>
           </div>
           <div className="col-4  right-content">
-            <div className="signin "><Link to={'/login'}>Login</Link></div>
+            <div className="signin ">
+              <Link to={"/login"}>Login</Link>
+            </div>
             <div className="signup">
-              <button><Link to={'/register'}>Sign Up</Link></button>
+              <button
+                onClick={() => {
+                  history.push("/register");
+                }}
+              >
+                Sign Up
+              </button>
             </div>
             <div className="button-write">
               <button
