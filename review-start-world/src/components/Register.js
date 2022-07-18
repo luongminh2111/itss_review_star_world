@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import register from "../lib/firebase";
 
 export default class Register extends Component {
   render() {
@@ -14,6 +15,7 @@ export default class Register extends Component {
                 type="text"
                 className="form-control"
                 placeholder="First Name"
+                id="firstname"
               ></input>
             </div>
 
@@ -23,6 +25,16 @@ export default class Register extends Component {
                 type="text"
                 className="form-control"
                 placeholder="Last Name"
+                id="lastname"
+              ></input>
+            </div>
+            <div className="form-group">
+              <label>Address</label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Address"
+                id="address"
               ></input>
             </div>
 
@@ -32,6 +44,7 @@ export default class Register extends Component {
                 type="email"
                 className="form-control"
                 placeholder="Email"
+                id="email"
               ></input>
             </div>
 
@@ -41,6 +54,7 @@ export default class Register extends Component {
                 type="password"
                 className="form-control"
                 placeholder="Password"
+                id="password"
               ></input>
             </div>
 
@@ -53,7 +67,7 @@ export default class Register extends Component {
               ></input>
             </div>
 
-            <button className="btn btn-primary btn-block">Sign Up</button>
+            <button onClick={register} className="btn btn-primary btn-block">Sign Up</button>
           </form>
         </div>
       </div>
