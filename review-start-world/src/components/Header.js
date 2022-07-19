@@ -76,7 +76,7 @@ function Header(props) {
                 style={{
                   marginTop: "15px",
                   boxSizing: "border-box",
-                  paddingLeft: "50px",
+                  paddingLeft: "30px",
                   fontWeight: "600",
                 }}
               >
@@ -86,8 +86,8 @@ function Header(props) {
                     handleLogout();
                   }}
                   style={{
-                    marginLeft: "15px",
-                    padding: "10px 20px",
+                    marginLeft: "8px",
+                    padding: "10px 10px",
                     border: "1px solid red",
                     borderRadius: "5px",
                     cursor: "pointer",

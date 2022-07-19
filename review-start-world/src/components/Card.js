@@ -132,7 +132,6 @@ function Card() {
                         <span>
                           <AiFillEye />
                         </span>
-                        <span>50+ Views</span>
                       </span>
                     </div>
                     <div className="review-data">
@@ -146,7 +145,6 @@ function Card() {
                             <AiFillLike />
                           </span>
                           <span style={{ margin: "0 8px" }}>Like</span>
-                          <span className="count">0</span>
                         </div>
                         <div
                           className="comment col-3"
@@ -158,14 +156,12 @@ function Card() {
                             <AiOutlineComment />
                           </span>
                           <span style={{ margin: "0 8px" }}>Comment</span>
-                          <span className="count">0</span>
                         </div>
                         <div className="share col-3">
                           <span>
                             <AiOutlineShareAlt />
                           </span>
                           <span style={{ margin: "0 8px" }}>Share</span>
-                          <span className="count">0</span>
                         </div>
                       </div>
                       <div className="pull-right ">
