@@ -7,6 +7,12 @@ import { useHistory } from "react-router-dom";
 
 function Header(props) {
   const history = useHistory();
+  const user = localStorage.getItem("username");
+
+  const handleLogout = () => {
+    localStorage.clear();
+    history.push("/login");
+  };
   return (
     <div className="header">
       <div className="container">
@@ -44,24 +50,54 @@ function Header(props) {
             </div>
           </div>
           <div className="col-4  right-content">
-            <div
-              className="signin "
-              style={{ marginTop: "15px", fontWeight: "600" }}
-              onClick={() => {
-                history.push("/login");
-              }}
-            >
-              Login
-            </div>
-            <div className="signup">
-              <button
-                onClick={() => {
-                  history.push("/register");
+            {user.length > 0 ? (
+              <div
+                style={{
+                  marginTop: "15px",
+                  boxSizing: "border-box",
+                  paddingLeft: "50px",
+                  fontWeight: "600",
                 }}
               >
-                Free Sign Up
-              </button>
-            </div>
+                <span>{user}</span>
+                <span
+                  onClick={() => {
+                    handleLogout();
+                  }}
+                  style={{
+                    marginLeft: "15px",
+                    padding: "10px 20px",
+                    border: "1px solid red",
+                    borderRadius: "5px",
+                    cursor: "pointer",
+                  }}
+                >
+                  Logout
+                </span>
+              </div>
+            ) : (
+              <>
+                <div
+                  className="signin "
+                  style={{ marginTop: "15px", fontWeight: "600" }}
+                  onClick={() => {
+                    history.push("/login");
+                  }}
+                >
+                  Login
+                </div>
+                <div className="signup">
+                  <button
+                    onClick={() => {
+                      history.push("/register");
+                    }}
+                  >
+                    Free Sign Up
+                  </button>
+                </div>
+              </>
+            )}
+
             <div className="button-write">
               <button
                 onClick={() => {

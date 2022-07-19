@@ -7,78 +7,51 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
+import { useHistory } from "react-router-dom";
+import UserService from "../services/UserService";
 
 function Login(props) {
   const auth = getAuth(app);
-
-  const [email, setEmail] = useState("");
+  const history = useHistory();
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-
-    const signUp = () => {
-        const auth = getAuth();
-        createUserWithEmailAndPassword(auth, email, password)
-          .then((userCredential) => {
-            // Signed in 
-            // ...
-            const user = userCredential.user;
-            console.log(user);
-            alert("Successfully created an account")
-          })
-          .catch((error) => {
-            const errorCode = error.code;
-            // const errorMessage = error.message;
-            alert(errorCode);
-            // ..
-          });
-    }
-
-
-  const signIn = () => {
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        console.log(user);
-        alert("This user has successfully signed in");
-        // ...
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        // const errorMessage = error.message;
-        alert(errorCode);
-      });
+  const handleLogin = () => {
+    UserService.getByUsernameAndPassword(username, password).then((res) => {
+      console.log("data user : ", res.data);
+      if (res.data.username != null) {
+        localStorage.setItem("username", res.data.username);
+        history.push("/");
+      } else {
+        window.confirm("Tài khoản chưa tồn tại, vui lòng đăng kí");
+      }
+    });
   };
-
   return (
     <>
       <div className="login-page">
         <div className="form">
-          <form className="register-form">
-            <input type="text" placeholder="name" />
-            <input type="password" placeholder="password" />
-            <input type="text" placeholder="email address" />
-            <button>create</button>
-            <p className="message">
-              Already registered? <a href="#">Sign In</a>
-            </p>
-          </form>
-          <form className="login-form">
+          <div className="login-form">
             <input
               type="text"
               placeholder="username"
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => setUsername(e.target.value)}
             />
             <input
               type="password"
               placeholder="password"
               onChange={(e) => setPassword(e.target.value)}
             />
-            <button onClick={signIn}>login</button>
-            <p onClick={signUp} class="message">
-              Not registered? <a href="#">Create an account</a>
-            </p>
-          </form>
+            <button onClick={() => handleLogin()}>Login</button>
+          </div>
+          <p
+            style={{ marginTop: "20px", cursor: "pointer" }}
+            onClick={() => {
+              history.push("/register");
+            }}
+          >
+            Đăng kí
+          </p>
         </div>
       </div>
     </>

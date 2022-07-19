@@ -52,6 +52,7 @@ function Card() {
       }
     });
   };
+  const user = localStorage.getItem("username");
   const handleChangeIro = (value) => {
     if (value === 1) {
       setIro1("orange");
@@ -224,7 +225,7 @@ function Card() {
                     }}
                   >
                     <p style={{ boxSizing: "border-box", paddingLeft: "30px" }}>
-                      Luongminh:{" "}
+                      {user != null ? user : "minh"}:{" "}
                       <span style={{ fontWeight: "bold" }}>
                         {item1.content}
                       </span>
