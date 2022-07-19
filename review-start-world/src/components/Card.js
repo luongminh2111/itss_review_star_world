@@ -33,7 +33,7 @@ function Card() {
   }, [comment]);
   const getData = () => {
     ReviewService.getAll().then((res) => {
-      console.log("ok: ", res.data);
+      console.log(" check review: ", res.data);
       setCardList(res.data);
     });
   };
@@ -47,6 +47,7 @@ function Card() {
     displayDiv === "none" ? setDisplayDiv("block") : setDisplayDiv("none");
   };
   const saveComment = (reviewId) => {
+    console.log("check id review : ", reviewId);
     UserService.getByUsernameAndPassword(user, password).then((res) => {
       setUserID(res.data.id);
     });
@@ -58,7 +59,6 @@ function Card() {
     };
 
     CommentService.save(item).then((res) => {
-      console.log(" comment ok ", res);
       if (res.status === 200) {
         commentList.push(item);
       }
@@ -66,7 +66,6 @@ function Card() {
   };
   const getUser = () => {
     UserService.getAll().then((res) => {
-      console.log("res user: ", res);
       if (res.status === 200) {
         setListUser(res.data);
       }
@@ -205,6 +204,7 @@ function Card() {
                     onKeyPress={(event) => {
                       if (event.key === "Enter") {
                         setComment("");
+                        console.log(" check item o day:", item);
                         saveComment(item.id);
                       }
                     }}
@@ -222,7 +222,7 @@ function Card() {
                       <p
                         style={{ boxSizing: "border-box", paddingLeft: "30px" }}
                       >
-                        {item1.userId}:{" "}
+                        {item1.username}:{" "}
                         <span style={{ fontWeight: "bold" }}>
                           {item1.content}
                         </span>
