@@ -25,6 +25,7 @@ function Card() {
   const [userID, setUserID] = useState(1);
   const user = localStorage.getItem("username");
   const password = localStorage.getItem("password");
+  const address = localStorage.getItem("address");
   useEffect(() => {
     getData();
     getComment();
@@ -39,6 +40,7 @@ function Card() {
   const getComment = () => {
     CommentService.getAll().then((res) => {
       setCommentList(res.data);
+      console.log("comment :", res.data);
     });
   };
   const handleChangeHidenDiv = () => {
@@ -71,39 +73,6 @@ function Card() {
     });
   };
 
-  const handleChangeIro = (value) => {
-    if (value === 1) {
-      setIro1("orange");
-      setIro2("#b4bfbf");
-      setIro3("#b4bfbf");
-      setIro4("#b4bfbf");
-      setIro5("#b4bfbf");
-    } else if (value === 2) {
-      setIro1("orange");
-      setIro2("orange");
-      setIro3("#b4bfbf");
-      setIro4("#b4bfbf");
-      setIro5("#b4bfbf");
-    } else if (value === 3) {
-      setIro1("orange");
-      setIro2("orange");
-      setIro3("orange");
-      setIro4("#b4bfbf");
-      setIro5("#b4bfbf");
-    } else if (value === 4) {
-      setIro1("orange");
-      setIro2("orange");
-      setIro3("orange");
-      setIro4("orange");
-      setIro5("#b4bfbf");
-    } else {
-      setIro1("orange");
-      setIro2("orange");
-      setIro3("orange");
-      setIro4("orange");
-      setIro5("orange");
-    }
-  };
   const handleChangeComment = (event) => {
     setComment(event.target.value);
   };
@@ -128,7 +97,7 @@ function Card() {
                         <a href="">{item.createdBy}</a>
                       </div>
                       <div className="profile-addr">
-                        {user.address == null ? "hanoi" : user.address}
+                        {address === "null" ? "hanoi" : address}
                       </div>
                     </>
 
@@ -253,7 +222,7 @@ function Card() {
                       <p
                         style={{ boxSizing: "border-box", paddingLeft: "30px" }}
                       >
-                        {user != null ? user : "minh"}:{" "}
+                        {item1.userId}:{" "}
                         <span style={{ fontWeight: "bold" }}>
                           {item1.content}
                         </span>

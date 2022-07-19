@@ -50,7 +50,28 @@ function Header(props) {
             </div>
           </div>
           <div className="col-4  right-content">
-            {user.length > 0 ? (
+            {user == null ? (
+              <>
+                <div
+                  className="signin "
+                  style={{ marginTop: "15px", fontWeight: "600" }}
+                  onClick={() => {
+                    history.push("/login");
+                  }}
+                >
+                  Login
+                </div>
+                <div className="signup">
+                  <button
+                    onClick={() => {
+                      history.push("/register");
+                    }}
+                  >
+                    Free Sign Up
+                  </button>
+                </div>
+              </>
+            ) : (
               <div
                 style={{
                   marginTop: "15px",
@@ -75,27 +96,6 @@ function Header(props) {
                   ログアウト
                 </span>
               </div>
-            ) : (
-              <>
-                <div
-                  className="signin "
-                  style={{ marginTop: "15px", fontWeight: "600" }}
-                  onClick={() => {
-                    history.push("/login");
-                  }}
-                >
-                  Login
-                </div>
-                <div className="signup">
-                  <button
-                    onClick={() => {
-                      history.push("/register");
-                    }}
-                  >
-                    Free Sign Up
-                  </button>
-                </div>
-              </>
             )}
 
             <div className="button-write">
