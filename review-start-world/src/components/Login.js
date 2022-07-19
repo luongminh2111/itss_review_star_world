@@ -14,23 +14,25 @@ function Login(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const signUp = () => {
-    const auth = getAuth();
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        // ...
-        const user = userCredential.user;
-        console.log(user);
-        alert("Successfully created an account");
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        alert(errorCode);
-        // ..
-      });
-  };
+
+    const signUp = () => {
+        const auth = getAuth();
+        createUserWithEmailAndPassword(auth, email, password)
+          .then((userCredential) => {
+            // Signed in 
+            // ...
+            const user = userCredential.user;
+            console.log(user);
+            alert("Successfully created an account")
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            // const errorMessage = error.message;
+            alert(errorCode);
+            // ..
+          });
+    }
+
 
   const signIn = () => {
     signInWithEmailAndPassword(auth, email, password)
