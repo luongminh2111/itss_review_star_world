@@ -11,10 +11,12 @@ const App = () => {
     <Router>
       <React.Fragment>
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/register" component={Register} />
-          <Route exact path="/review/writereview" component={CreateReview} />
+          <>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/review/writereview" component={CreateReview} />
+          </>
         </Switch>
       </React.Fragment>
     </Router>

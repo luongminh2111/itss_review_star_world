@@ -21,6 +21,9 @@ function Login(props) {
       console.log("data user : ", res.data);
       if (res.data.username != null) {
         localStorage.setItem("username", res.data.username);
+        localStorage.setItem("address", res.data.address);
+        localStorage.setItem("password", res.data.password);
+        localStorage.setItem("id", res.data.id);
         history.push("/");
       } else {
         window.confirm("Tài khoản chưa tồn tại, vui lòng đăng kí");
@@ -34,15 +37,15 @@ function Login(props) {
           <div className="login-form">
             <input
               type="text"
-              placeholder="username"
+              placeholder="ユーザー名"
               onChange={(e) => setUsername(e.target.value)}
             />
             <input
               type="password"
-              placeholder="password"
+              placeholder="パスワード"
               onChange={(e) => setPassword(e.target.value)}
             />
-            <button onClick={() => handleLogin()}>Login</button>
+            <button onClick={() => handleLogin()}>ログイン</button>
           </div>
           <p
             style={{ marginTop: "20px", cursor: "pointer" }}
@@ -50,7 +53,7 @@ function Login(props) {
               history.push("/register");
             }}
           >
-            Đăng kí
+            サインアップ
           </p>
         </div>
       </div>

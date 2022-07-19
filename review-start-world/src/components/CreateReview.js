@@ -6,6 +6,7 @@ import { AiFillStar } from "react-icons/ai";
 import ReviewService from "../services/ReviewService";
 import { useHistory } from "react-router-dom";
 function CreateReview() {
+  const user = localStorage.getItem("username");
   const history = useHistory();
   const [rate, setRate] = useState(0);
   const [title, setTitle] = useState("");
@@ -65,7 +66,7 @@ function CreateReview() {
       title: title,
       rate: rate,
       content: content,
-      createdBy: "minh",
+      createdBy: user,
       createdDate: new Date(),
     };
     ReviewService.save(item).then((res) => {

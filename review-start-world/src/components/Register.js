@@ -48,20 +48,20 @@ function Register(props) {
           <div className="login-form">
             <input
               type="text"
-              placeholder="username"
+              placeholder="ユーザー名"
               onChange={(e) => setUsername(e.target.value)}
             />
             <input
               type="password"
-              placeholder="password"
+              placeholder="パスワード"
               onChange={(e) => setPassword(e.target.value)}
             />
             <input
               type="text"
-              placeholder="address"
+              placeholder="住所"
               onChange={(e) => setAddress(e.target.value)}
             />
-            <button onClick={() => handleSignUp()}>Sign Up</button>
+            <button onClick={() => handleSignUp()}>サインアップ</button>
           </div>
           <p
             style={{ marginTop: "15px", cursor: "pointer" }}
@@ -70,7 +70,7 @@ function Register(props) {
             }}
           >
             {" "}
-            Bạn đã có tài khoản? Đăng nhập
+            アカウントを持つ? ログイン
           </p>
         </div>
       </div>

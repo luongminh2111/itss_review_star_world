@@ -72,7 +72,7 @@ function Header(props) {
                     cursor: "pointer",
                   }}
                 >
-                  Logout
+                  ログアウト
                 </span>
               </div>
             ) : (
