@@ -14,26 +14,29 @@ function Card() {
   const [cardList, setCardList] = useState([]);
   const [commentList, setCommentList] = useState([]);
   const [comment, setComment] = useState("");
-  const [iro1, setIro1] = useState("#b4bfbf");
-  const [iro2, setIro2] = useState("#b4bfbf");
-  const [iro3, setIro3] = useState("#b4bfbf");
+  const [iro1, setIro1] = useState("orange");
+  const [iro2, setIro2] = useState("orange");
+  const [iro3, setIro3] = useState("orange");
   const [iro4, setIro4] = useState("#b4bfbf");
   const [iro5, setIro5] = useState("#b4bfbf");
+  const [displayDiv, setDisplayDiv] = useState("none");
   useEffect(() => {
     getData();
     getComment();
-  }, [commentList]);
+  }, [comment]);
   const getData = () => {
     ReviewService.getAll().then((res) => {
-      console.log("res data : ", res.data);
+      console.log("ok");
       setCardList(res.data);
     });
   };
   const getComment = () => {
     CommentService.getAll().then((res) => {
-      console.log("okok: ", res.data);
       setCommentList(res.data);
     });
+  };
+  const handleChangeHidenDiv = () => {
+    displayDiv === "none" ? setDisplayDiv("block") : setDisplayDiv("none");
   };
   const saveComment = (reviewId) => {
     let item = {
@@ -150,7 +153,12 @@ function Card() {
                         <span style={{ margin: "0 8px" }}>Like</span>
                         <span className="count">0</span>
                       </div>
-                      <div className="comment col-3">
+                      <div
+                        className="comment col-3"
+                        onClick={() => {
+                          handleChangeHidenDiv();
+                        }}
+                      >
                         <span>
                           <AiOutlineComment />
                         </span>
@@ -177,6 +185,7 @@ function Card() {
               <hr />
               <div
                 style={{
+                  display: displayDiv,
                   boxSizing: "border-box",
                   paddingLeft: "170px",
                   width: "100%",
@@ -199,6 +208,7 @@ function Card() {
                   }}
                   onKeyPress={(event) => {
                     if (event.key === "Enter") {
+                      setComment("");
                       saveComment(item.id);
                     }
                   }}
